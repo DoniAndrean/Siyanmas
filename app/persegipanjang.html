@@ -1,0 +1,39 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+</head>
+<body>
+    <h1>Rumus Persegi Panjang</h1>
+    <p>Masukkan panjang dan lebar persegi panjang:</p>
+    <label for="length">Panjang:</label>
+    <input type="number" id="length" placeholder="Panjang">
+    <br><br>
+    <label for="width">Lebar:</label>
+    <input type="number" id="width" placeholder="Lebar">
+    <br><br>
+    <button onclick="calculateRectangle()">Hitung</button>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateRectangle() {
+            const length = document.getElementById('length').value;
+            const width = document.getElementById('width').value;
+
+            if (length <= 0 || width <= 0) {
+                alert("Panjang dan lebar harus lebih dari 0");
+                return;
+            }
+
+            const area = length * width;
+            const perimeter = 2 * (length + width);
+
+            document.getElementById('result').innerHTML = `
+                <p>Luas Persegi Panjang: ${area.toFixed(2)}</p>
+                <p>Keliling Persegi Panjang: ${perimeter.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

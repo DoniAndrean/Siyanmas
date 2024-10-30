@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rumus Lingkaran</h1>
+    <p>Inputkan Jari-jari Lingkaran</p>
+    <input type="number" id="radius" placeholder="jari-jari">
+    <button onclick="rumuslingkaran()">Hitung</button>
+    <div id="hasil"></div>
+
+    <script>
+        function rumuslingkaran() 
+        {
+            const pi = 3.14;
+            const radius = document.getElementById('radius').value;
+            const luas = pi * radius * radius;
+            const keliling = 2 * pi * radius;
+
+            document.getElementById('hasil').innerHTML = `
+            <p>Luas Lingkaran : ${luas.toFixed(2)}</p>
+            <p>Keliling Lingkaran : ${keliling.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
